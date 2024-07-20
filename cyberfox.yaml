@@ -1,0 +1,205 @@
+meta:
+  engine: 4.1.0
+  version: 0.5.0
+  author: Daniel Fox
+units:
+  # For Ergogen - set the default width and height to Choc.
+  # Comment out if you're using MX layout, though this only affects the display
+  # on the Ergogen site.
+  $default_width: cx
+  $default_height: cy
+  # Proxy spacing variables - Choc (low-profile)
+  kx: cx
+  ky: cy
+  # Proxy spacing variables - MX layout
+  # kx: u
+  # ky: u
+  # Padding
+  px: kx + 2
+  py: ky + 2
+  # Half distance, for movement
+  hx: (kx / 2)
+  hy: (ky / 2)
+  # half padding distance, for movement
+  hpx: (px / 2)
+  hpy: (py / 2)
+points:
+  zones:
+    matrix:
+      anchor:
+        shift: [100, -100] # correct anchoring for KiCAD sheet
+      key:
+        padding: 1ky
+        spread: 1kx
+        tags:
+          cap: true
+      rows:
+        mod:
+        bottom:
+        home:
+        top:
+        num:
+      columns:
+        outer:
+          rows.mod.skip: true
+          key:
+            width: 1.5kx
+            stagger: 0
+            tags:
+              cap: false
+              bigcap: true
+        pinky:
+          rows.mod.skip: true
+          key:
+            stagger: 0
+            spread: 1.25kx
+        ring:
+          key:
+            stagger: 5
+        middle:
+          key:
+            stagger: 3
+        index:
+          key:
+            stagger: -3
+        inner:
+          rows.mod.skip: true
+          key:
+            stagger: -3
+    thumbs:
+      key:
+        spread: 1ky
+        rotate: 90
+        tags:
+          bigcap: true
+      anchor:
+        ref: matrix_inner_mod
+        shift: [2, -2]
+      columns:
+        space:
+          key:
+            height: 1.5kx
+            splay: -30
+            shift: [0.25hpx, -0.75hpy]
+        extra:
+          key:
+            height: 1.5kx
+            shift: [0.25hpx, -0.75hpy]
+      rows:
+        cluster:
+  rotate: 0
+  mirror: &mirror
+    ref: thumbs_extra_cluster
+    distance: 2.5kx
+outlines:
+  switch_grid:
+    - what: rectangle
+      where: true
+      size: [kx-0.5, ky-0.5]
+  keys1u:
+    - what: rectangle
+      where: cap
+      size: [kx-0.5, ky-0.5]
+  keys15u:
+    - what: rectangle
+      where: bigcap
+      size: [1.5kx-0.5, ky-0.5]
+  keys:
+    [keys1u, keys15u]
+  board_left:
+    - what: polygon
+      operation: stack
+      fillet: 2
+      points:
+        - ref: matrix_outer_num # Upper-left corner
+          shift: [-0.75px, hpy]
+        - ref: matrix_middle_num
+          shift: [-hpx, hpy]
+        - ref: matrix_middle_num
+          shift: [hpx, hpy]
+        - ref: matrix_inner_num
+          shift: [hpx, hpy]
+        - ref: matrix_inner_num # Upper-right corner, adding space for electronics
+          shift: [hpx + 1px, hpy]
+        - ref: thumbs_extra_cluster # Bottmo of thumb cluster bump
+          shift: [0.75py, -hpy]
+        - ref: thumbs_extra_cluster # Inside cluster
+          shift: [-0.75py - 1, -hpx]
+        - ref: matrix_ring_mod
+          shift: [px - 2, -hpy]
+        - ref: matrix_ring_mod
+          shift: [-hpx, -hpy]
+        - ref: matrix_outer_bottom
+          shift: [-0.75px, -hpy]
+  board_right:
+    - what: polygon
+      operation: stack
+      fillet: 2
+      points:
+        - ref: mirror_matrix_outer_num # Upper-left corner
+          shift: [-0.75px, hpy]
+        - ref: mirror_matrix_middle_num
+          shift: [-hpx, hpy]
+        - ref: mirror_matrix_middle_num
+          shift: [hpx, hpy]
+        - ref: mirror_matrix_inner_num
+          shift: [hpx, hpy]
+        - ref: mirror_matrix_inner_num # Upper-right corner, adding space for electronics
+          shift: [hpx + 1px, hpy]
+        - ref: mirror_thumbs_extra_cluster # Bottmo of thumb cluster bump
+          shift: [0.75py, -hpy]
+        - ref: mirror_thumbs_extra_cluster # Inside cluster
+          shift: [-0.75py - 1, -hpx]
+        - ref: mirror_matrix_ring_mod
+          shift: [px - 2, -hpy]
+        - ref: mirror_matrix_ring_mod
+          shift: [-hpx, -hpy]
+        - ref: mirror_matrix_outer_bottom
+          shift: [-0.75px, -hpy]
+  board_left_keycaps:
+    - name: board_left
+    - operation: subtract
+      name: keys
+  board_right_keycaps:
+    - name: board_right
+    - operation: subtract
+      name: keys
+  board_left_switch_cutouts:
+    - name: board_left
+    - operation: subtract
+      name: switch_grid
+  board_right_switch_cutouts:
+    - name: board_right
+    - operation: subtract
+      name: switch_grid
+pcbs:
+  left:
+    outlines:
+      main:
+        outline: board_left
+    footprints:
+      choc_hotswap:
+        what: choc
+        where: true
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{col_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      nice_nano:
+        what: nice_nano
+        params:
+          orientation: down
+        where:
+          ref: matrix_inner_top
+          shift: [px,0]
+          rotate: -90
