@@ -103,6 +103,7 @@ points:
             shift: [0.25hpx, -0.75hpy]
       rows:
         cluster:
+          row_net: P113
   rotate: 0
   mirror: &mirror
     ref: thumbs_extra_cluster
@@ -211,6 +212,18 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
+      rotary_knob:
+        what: rotary
+        params:
+          from: P020
+          to: P113
+          A: P006
+          B: GND
+          C: P008
+        where:
+          ref: matrix_inner_home
+          shift: [px - 1.5, -hpy + 3]
+          rotate: 90
       # Controller
       nice_nano:
         what: nice_nano
@@ -260,7 +273,7 @@ pcbs:
           ref: matrix_inner_bottom
           shift: [-hpx + 1, -hpy - 2]
         params: &textParams
-          text: "CYBERFOX"
+          text: "CYBERFOX-60"
           justify: left
           h_size: 3.0
           v_size: 3.0
@@ -287,6 +300,18 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
+      rotary_knob:
+        what: rotary
+        params:
+          from: P020
+          to: P113
+          A: P006
+          B: GND
+          C: P008
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [px - 1.5, -hpy + 3]
+          rotate: 270
       # Controller
       nice_nano:
         what: nice_nano
@@ -336,7 +361,7 @@ pcbs:
           ref: mirror_matrix_inner_bottom
           shift: [-hpx + 1, -hpy - 2]
         params: &textParams
-          text: "CYBERFOX"
+          text: "CYBERFOX-60"
           justify: right
           h_size: 3.0
           v_size: 3.0
