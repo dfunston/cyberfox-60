@@ -23,6 +23,21 @@ units:
   # half padding distance, for movement
   hpx: (px / 2)
   hpy: (py / 2)
+  # positioning of electric components
+  rotary_shift_x: px - 2
+  rotary_shift_y: -hpy
+  nice_nano_shift_x: px
+  nice_nano_shift_y: hpy - 1
+  nice_view_shift_x: px
+  nice_view_shift_y: -hpy
+  battery_shift_x: 1.5px - 3
+  battery_shift_y: -hpy - 1
+  reset_shift_x: 1.5px - 2
+  reset_shift_y: hpy - 4
+  switch_shift_x: 1.5px - 2
+  switch_shift_y: -4
+  text_shift_x: -hpx + 1
+  text_shift_y: -hpy - 2
 points:
   zones:
     matrix:
@@ -43,14 +58,14 @@ points:
         top:
           row_net: P029
         num:
-          row_net: P013
+          row_net: P031
       columns:
         outer:
           rows.mod.skip: true
           key:
             width: 1.5kx
             stagger: 0
-            col_net: P020
+            col_net: P011
             tags:
               cap: false
               bigcap: true
@@ -58,28 +73,28 @@ points:
           rows.mod.skip: true
           key:
             stagger: 0
-            col_net: P022
+            col_net: P104
             spread: 1.25kx
         ring:
+          rows.mod.col_net: P104
           key:
             stagger: 5
-            col_net: P024
-          rows.mod.col_net: P022
+            col_net: P106
         middle:
+          rows.mod.col_net: P106
           key:
             stagger: 3
-            col_net: P100
-          rows.mod.col_net: P024
+            col_net: P111
         index:
+          rows.mod.col_net: P111
           key:
             stagger: -3
-            col_net: P011
-          rows.mod.col_net: P100
+            col_net: P010
         inner:
           rows.mod.skip: true
           key:
             stagger: -3
-            col_net: P017
+            col_net: P009
     thumbs:
       key:
         spread: 1ky
@@ -94,12 +109,12 @@ points:
           key:
             height: 1.5kx
             splay: -30
-            col_net: P011
+            col_net: P010
             shift: [0.25hpx, -0.75hpy]
         extra:
           key:
             height: 1.5kx
-            col_net: P017
+            col_net: P009
             shift: [0.25hpx, -0.75hpy]
       rows:
         cluster:
@@ -173,19 +188,19 @@ outlines:
           shift: [-hpx, -hpy]
         - ref: mirror_matrix_outer_bottom
           shift: [-0.75px, -hpy]
-  board_left_keycaps:
+  board_left_keycaps: # Mostly just for visualization
     - name: board_left
     - operation: subtract
       name: keys
-  board_right_keycaps:
+  board_right_keycaps: # Mostly just for visualization
     - name: board_right
     - operation: subtract
       name: keys
-  board_left_switch_cutouts:
+  board_left_switch_cutouts: # Used to show where switches will go. Useful for 3D Printing.
     - name: board_left
     - operation: subtract
       name: switch_grid
-  board_right_switch_cutouts:
+  board_right_switch_cutouts: # Used to show where switches will go.  Useful for 3D Printing.
     - name: board_right
     - operation: subtract
       name: switch_grid
@@ -212,59 +227,72 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
-      rotary_knob:
-        what: rotary
+      rotary:
+        # what: rotary
+        what: scrollwheel # I decided I like this better.
         params:
-          from: P020
+          from: P011
           to: P113
           A: P006
           B: GND
           C: P008
+          D: unused
         where:
           ref: matrix_inner_home
-          shift: [px - 1.5, -hpy + 3]
+          shift: [rotary_shift_x, rotary_shift_y]
           rotate: 90
       # Controller
       nice_nano:
         what: nice_nano
         params:
-          orientation: down
+          orientation: up
         where:
           ref: matrix_inner_top
-          shift: [px - 2,hpy - 1]
+          shift: [nice_nano_shift_x, nice_nano_shift_y]
           rotate: -90
+      # Screen
+      nice_view: 
+        what: nice_view
+        params:
+          SDA: P017
+          SCL: P020
+          CS: P022
+        where:
+          ref: matrix_inner_top
+          shift: [nice_view_shift_x, nice_view_shift_y]
+          rotate: 90
       # Battery jack
       jstph:
         what: jstph
         where:
           ref: matrix_inner_bottom
-          shift: [px, -2]
-          rotate: 90
+          shift: [battery_shift_x, battery_shift_y]
+          rotate: 0
         params:
           side: B
-          pos: pos
+          pos: POS
           neg: GND
       # Reset switch
       horizontal_reset:
         what: EVQPUC
         params:
-          side: B
+          side: F
           from: GND
           to: RST
         where:
-          ref: matrix_inner_home
-          shift: [1.5px - 2, -4]
+          ref: matrix_inner_bottom
+          shift: [reset_shift_x, reset_shift_y]
           rotate: -90
       # Switch
       battery_switch:
         what: slider
         where:
-          ref: matrix_inner_home
-          shift: [1.5px - 2, hpy - 4]
+          ref: matrix_inner_bottom
+          shift: [switch_shift_x, switch_shift_y]
           rotate: -90
         params:
-          side: B
-          from: pos
+          side: F
+          from: POS
           to: RAW
       # PCB text - CYBERFOX
       front_text: &text
@@ -300,66 +328,79 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
-      rotary_knob:
-        what: rotary
+      rotary:
+        # what: rotary
+        what: scrollwheel # I decided I like this better.
         params:
-          from: P020
+          from: P011
           to: P113
           A: P006
           B: GND
           C: P008
+          D: unused
         where:
           ref: mirror_matrix_inner_home
-          shift: [px - 1.5, -hpy + 3]
+          shift: [rotary_shift_x, rotary_shift_y]
           rotate: 270
       # Controller
       nice_nano:
         what: nice_nano
         params:
-          orientation: down
+          orientation: up
         where:
           ref: mirror_matrix_inner_top
-          shift: [px - 2,hpy - 1]
+          shift: [nice_nano_shift_x, nice_nano_shift_y]
           rotate: -270
+      # Screen
+      nice_view: 
+        what: nice_view
+        params:
+          SDA: P017
+          SCL: P020
+          CS: P022
+        where:
+          ref: mirror_matrix_inner_top
+          shift: [nice_view_shift_x, nice_view_shift_y]
+          rotate: 270
       # Battery jack
       jstph:
         what: jstph
         where:
           ref: mirror_matrix_inner_bottom
-          shift: [px, -2]
-          rotate: 90
+          shift: [battery_shift_x, battery_shift_y]
+          rotate: 0
         params:
-          side: B
-          pos: pos
+          side: F
+          pos: POS
           neg: GND
       # Reset switch
       horizontal_reset:
         what: EVQPUC
         params:
-          side: B
+          side: F
           from: GND
           to: RST
         where:
-          ref: mirror_matrix_inner_home
-          shift: [1.5px - 2, -4]
+          ref: mirror_matrix_inner_bottom
+          shift: [reset_shift_x, reset_shift_y]
           rotate: -90
       # Switch
       battery_switch:
         what: slider
         where:
-          ref: mirror_matrix_inner_home
-          shift: [1.5px - 2, hpy - 4]
+          ref: mirror_matrix_inner_bottom
+          shift: [switch_shift_x, switch_shift_y]
           rotate: -90
         params:
-          side: B
-          from: pos
+          side: F
+          from: POS
           to: RAW
       # PCB text - CYBERFOX
       front_text: &text
         what: text
         where: &textWhere
           ref: mirror_matrix_inner_bottom
-          shift: [-hpx + 1, -hpy - 2]
+          shift: [text_shift_x, text_shift_y]
         params: &textParams
           text: "CYBERFOX-60"
           justify: right
