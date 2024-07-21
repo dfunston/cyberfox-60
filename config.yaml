@@ -35,16 +35,22 @@ points:
           cap: true
       rows:
         mod:
+          row_net: P113
         bottom:
+          row_net: P115
         home:
+          row_net: P002
         top:
+          row_net: P029
         num:
+          row_net: P013
       columns:
         outer:
           rows.mod.skip: true
           key:
             width: 1.5kx
             stagger: 0
+            col_net: P020
             tags:
               cap: false
               bigcap: true
@@ -52,20 +58,28 @@ points:
           rows.mod.skip: true
           key:
             stagger: 0
+            col_net: P022
             spread: 1.25kx
         ring:
           key:
             stagger: 5
+            col_net: P024
+          rows.mod.col_net: P022
         middle:
           key:
             stagger: 3
+            col_net: P100
+          rows.mod.col_net: P024
         index:
           key:
             stagger: -3
+            col_net: P011
+          rows.mod.col_net: P100
         inner:
           rows.mod.skip: true
           key:
             stagger: -3
+            col_net: P017
     thumbs:
       key:
         spread: 1ky
@@ -80,10 +94,12 @@ points:
           key:
             height: 1.5kx
             splay: -30
+            col_net: P011
             shift: [0.25hpx, -0.75hpy]
         extra:
           key:
             height: 1.5kx
+            col_net: P017
             shift: [0.25hpx, -0.75hpy]
       rows:
         cluster:
@@ -180,7 +196,7 @@ pcbs:
     footprints:
       choc_hotswap:
         what: choc
-        where: true
+        where: /^(?:matrix|thumbs)_.*/
         params:
           keycaps: true
           reverse: false
@@ -189,17 +205,139 @@ pcbs:
           to: "{{colrow}}"
       diode:
         what: diode
-        where: true
+        where: /^(?:matrix|thumbs)_.*/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
+      # Controller
       nice_nano:
         what: nice_nano
         params:
           orientation: down
         where:
           ref: matrix_inner_top
-          shift: [px,0]
+          shift: [px - 2,hpy - 1]
           rotate: -90
+      # Battery jack
+      jstph:
+        what: jstph
+        where:
+          ref: matrix_inner_bottom
+          shift: [px, -2]
+          rotate: 90
+        params:
+          side: B
+          pos: pos
+          neg: GND
+      # Reset switch
+      horizontal_reset:
+        what: EVQPUC
+        params:
+          side: B
+          from: GND
+          to: RST
+        where:
+          ref: matrix_inner_home
+          shift: [1.5px - 2, -4]
+          rotate: -90
+      # Switch
+      battery_switch:
+        what: slider
+        where:
+          ref: matrix_inner_home
+          shift: [1.5px - 2, hpy - 4]
+          rotate: -90
+        params:
+          side: B
+          from: pos
+          to: RAW
+      # PCB text - CYBERFOX
+      front_text: &text
+        what: text
+        where: &textWhere
+          ref: matrix_inner_bottom
+          shift: [-hpx + 1, -hpy - 2]
+        params: &textParams
+          text: "CYBERFOX"
+          justify: left
+          h_size: 3.0
+          v_size: 3.0
+          thickness: 0.4
+  right:
+    outlines:
+      main:
+        outline: board_right
+    footprints:
+      choc_hotswap:
+        what: choc
+        where: /^mirror_.*/
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{col_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: /^mirror_.*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      # Controller
+      nice_nano:
+        what: nice_nano
+        params:
+          orientation: down
+        where:
+          ref: mirror_matrix_inner_top
+          shift: [px - 2,hpy - 1]
+          rotate: -270
+      # Battery jack
+      jstph:
+        what: jstph
+        where:
+          ref: mirror_matrix_inner_bottom
+          shift: [px, -2]
+          rotate: 90
+        params:
+          side: B
+          pos: pos
+          neg: GND
+      # Reset switch
+      horizontal_reset:
+        what: EVQPUC
+        params:
+          side: B
+          from: GND
+          to: RST
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [1.5px - 2, -4]
+          rotate: -90
+      # Switch
+      battery_switch:
+        what: slider
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [1.5px - 2, hpy - 4]
+          rotate: -90
+        params:
+          side: B
+          from: pos
+          to: RAW
+      # PCB text - CYBERFOX
+      front_text: &text
+        what: text
+        where: &textWhere
+          ref: mirror_matrix_inner_bottom
+          shift: [-hpx + 1, -hpy - 2]
+        params: &textParams
+          text: "CYBERFOX"
+          justify: right
+          h_size: 3.0
+          v_size: 3.0
+          thickness: 0.4
