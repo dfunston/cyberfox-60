@@ -24,25 +24,27 @@ units:
   hpx: (px / 2)
   hpy: (py / 2)
   # positioning of electric components
-  rotary_shift_x: px - 2
-  rotary_shift_y: -hpy
+  rotary_shift_x: px + 2
+  rotary_shift_y: 0
+  rotary_diode_shift_x: hpx + 2.5
+  rotary_diode_shift_y: -4.5
   nice_nano_shift_x: px
-  nice_nano_shift_y: hpy - 1
+  nice_nano_shift_y: py - 4.5
   nice_view_shift_x: px
-  nice_view_shift_y: -hpy
+  nice_view_shift_y: -5
   battery_shift_x: 1.5px - 3
   battery_shift_y: -hpy - 1
-  reset_shift_x: 1.5px - 2
-  reset_shift_y: hpy - 4
-  switch_shift_x: 1.5px - 2
-  switch_shift_y: -4
+  reset_shift_x: 2
+  reset_shift_y: py - 5.5
+  switch_shift_x: 1.5px + 2.65
+  switch_shift_y: 3
   text_shift_x: -hpx + 1
   text_shift_y: -hpy - 2
 points:
   zones:
     matrix:
       anchor:
-        shift: [100, -100] # correct anchoring for KiCAD sheet
+        shift: [010, -100] # correct anchoring for KiCAD sheet
       key:
         padding: 1ky
         spread: 1kx
@@ -147,14 +149,16 @@ outlines:
           shift: [-0.75px, hpy]
         - ref: matrix_middle_num
           shift: [-hpx, hpy]
-        - ref: matrix_middle_num
-          shift: [hpx, hpy]
-        - ref: matrix_inner_num
-          shift: [hpx, hpy]
-        - ref: matrix_inner_num # Upper-right corner, adding space for electronics
-          shift: [hpx + 1px, hpy]
+        # - ref: matrix_middle_num
+        #   shift: [hpx, hpy]
+        # - ref: matrix_inner_num
+        #   shift: [hpx, hpy]
+        # - ref: matrix_inner_num # Upper-right corner, adding space for electronics
+        #   shift: [hpx + 1px, hpy]
+        - ref: matrix_middle_num # Upper-right corner, adding space for electronics
+          shift: [4px - 10, hpy]
         - ref: thumbs_extra_cluster # Bottmo of thumb cluster bump
-          shift: [0.75py, -hpy]
+          shift: [py + 2, -hpy]
         - ref: thumbs_extra_cluster # Inside cluster
           shift: [-0.75py - 1, -hpx]
         - ref: matrix_ring_mod
@@ -172,14 +176,16 @@ outlines:
           shift: [-0.75px, hpy]
         - ref: mirror_matrix_middle_num
           shift: [-hpx, hpy]
-        - ref: mirror_matrix_middle_num
-          shift: [hpx, hpy]
-        - ref: mirror_matrix_inner_num
-          shift: [hpx, hpy]
-        - ref: mirror_matrix_inner_num # Upper-right corner, adding space for electronics
-          shift: [hpx + 1px, hpy]
+        # - ref: mirror_matrix_middle_num
+        #   shift: [hpx, hpy]
+        # - ref: mirror_matrix_inner_num
+        #   shift: [hpx, hpy]
+        # - ref: mirror_matrix_inner_num # Upper-right corner, adding space for electronics
+        #   shift: [hpx + 1px, hpy]
+        - ref: mirror_matrix_middle_num # Upper-right corner, adding space for electronics
+          shift: [4px - 10, hpy]
         - ref: mirror_thumbs_extra_cluster # Bottmo of thumb cluster bump
-          shift: [0.75py, -hpy]
+          shift: [py + 2, -hpy]
         - ref: mirror_thumbs_extra_cluster # Inside cluster
           shift: [-0.75py - 1, -hpx]
         - ref: mirror_matrix_ring_mod
@@ -232,7 +238,7 @@ pcbs:
         what: scrollwheel # I decided I like this better.
         params:
           from: P011
-          to: P113
+          to: ROTARY
           A: P006
           B: GND
           C: P008
@@ -240,7 +246,16 @@ pcbs:
         where:
           ref: matrix_inner_home
           shift: [rotary_shift_x, rotary_shift_y]
-          rotate: 90
+          rotate: 0
+      rotary_diode: # Separate diode for the rotary push-button
+        what: diode
+        where:
+          ref: matrix_inner_home
+          shift: [rotary_diode_shift_x, rotary_diode_shift_y]
+          rotate: -90
+        params:
+          from: ROTARY
+          to: P113
       # Controller
       nice_nano:
         what: nice_nano
@@ -267,7 +282,7 @@ pcbs:
         where:
           ref: matrix_inner_bottom
           shift: [battery_shift_x, battery_shift_y]
-          rotate: 0
+          rotate: 90
         params:
           side: B
           pos: POS
@@ -280,14 +295,14 @@ pcbs:
           from: GND
           to: RST
         where:
-          ref: matrix_inner_bottom
+          ref: matrix_inner_num
           shift: [reset_shift_x, reset_shift_y]
-          rotate: -90
+          rotate: 0
       # Switch
       battery_switch:
         what: slider
         where:
-          ref: matrix_inner_bottom
+          ref: matrix_inner_num
           shift: [switch_shift_x, switch_shift_y]
           rotate: -90
         params:
@@ -306,6 +321,41 @@ pcbs:
           h_size: 3.0
           v_size: 3.0
           thickness: 0.4
+      hole0:
+        what: hole_m2
+        where:
+          ref: thumbs_extra_cluster
+          shift: [0.75px, 0]
+      hole1:
+        what: hole_m2
+        where:
+          ref: matrix_inner_bottom
+          shift: [1.5px, 0]
+      hole2:
+        what: hole_m2
+        where:
+          ref: matrix_index_num
+          shift: [hpx, hpy - 1]
+      hole3:
+        what: hole_m2
+        where:
+          ref: matrix_outer_num
+          shift: [hpx + 1, 0]
+      hole4:
+        what: hole_m2
+        where:
+          ref: matrix_outer_bottom
+          shift: [hpx + 1, 0]
+      hole5:
+        what: hole_m2
+        where:
+          ref: matrix_middle_home
+          shift: [hpx - 0.5, hpy - 1]
+      hole6:
+        what: hole_m2
+        where:
+          ref: matrix_index_mod
+          shift: [0, hpy]
   right:
     outlines:
       main:
@@ -333,7 +383,7 @@ pcbs:
         what: scrollwheel # I decided I like this better.
         params:
           from: P011
-          to: P113
+          to: ROTARY
           A: P006
           B: GND
           C: P008
@@ -341,7 +391,16 @@ pcbs:
         where:
           ref: mirror_matrix_inner_home
           shift: [rotary_shift_x, rotary_shift_y]
-          rotate: 270
+          rotate: 180
+      rotary_diode: # Separate diode for the rotary push-button
+        what: diode
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [rotary_diode_shift_x, rotary_diode_shift_y]
+          rotate: -90
+        params:
+          from: ROTARY
+          to: P113
       # Controller
       nice_nano:
         what: nice_nano
@@ -350,7 +409,7 @@ pcbs:
         where:
           ref: mirror_matrix_inner_top
           shift: [nice_nano_shift_x, nice_nano_shift_y]
-          rotate: -270
+          rotate: 90
       # Screen
       nice_view: 
         what: nice_view
@@ -361,16 +420,16 @@ pcbs:
         where:
           ref: mirror_matrix_inner_top
           shift: [nice_view_shift_x, nice_view_shift_y]
-          rotate: 270
+          rotate: -90
       # Battery jack
       jstph:
         what: jstph
         where:
           ref: mirror_matrix_inner_bottom
           shift: [battery_shift_x, battery_shift_y]
-          rotate: 0
+          rotate: 90
         params:
-          side: F
+          side: B
           pos: POS
           neg: GND
       # Reset switch
@@ -381,14 +440,14 @@ pcbs:
           from: GND
           to: RST
         where:
-          ref: mirror_matrix_inner_bottom
+          ref: mirror_matrix_inner_num
           shift: [reset_shift_x, reset_shift_y]
-          rotate: -90
+          rotate: 0
       # Switch
       battery_switch:
         what: slider
         where:
-          ref: mirror_matrix_inner_bottom
+          ref: mirror_matrix_inner_num
           shift: [switch_shift_x, switch_shift_y]
           rotate: -90
         params:
@@ -407,3 +466,38 @@ pcbs:
           h_size: 3.0
           v_size: 3.0
           thickness: 0.4
+      hole0:
+        what: hole_m2
+        where:
+          ref: mirror_thumbs_extra_cluster
+          shift: [0.75px, 0]
+      hole1:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_inner_bottom
+          shift: [1.5px, 0]
+      hole2:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_index_num
+          shift: [hpx, hpy - 1]
+      hole3:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_outer_num
+          shift: [hpx + 1, 0]
+      hole4:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_outer_bottom
+          shift: [hpx + 1, 0]
+      hole5:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_middle_home
+          shift: [hpx - 0.5, hpy - 1]
+      hole6:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_index_mod
+          shift: [0, hpy]

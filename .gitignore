@@ -132,3 +132,5 @@ dist
 
 # Ignore those weird MacOS files.
 .DS_Store
+# Auto-generated lock files.
+*.lck
