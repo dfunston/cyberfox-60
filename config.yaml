@@ -11,6 +11,7 @@ units:
   # Proxy spacing variables - Choc (low-profile)
   kx: cx
   ky: cy
+  spacing: 0.75
   # Proxy spacing variables - MX layout
   # kx: u
   # ky: u
@@ -29,13 +30,13 @@ units:
   rotary_diode_shift_x: hpx + 2.5
   rotary_diode_shift_y: -4.5
   nice_nano_shift_x: px
-  nice_nano_shift_y: py - 4.5
+  nice_nano_shift_y: py - 6 # was 4.5
   nice_view_shift_x: px
-  nice_view_shift_y: -5
+  nice_view_shift_y: -6.5 # was 5
   battery_shift_x: 1.5px - 3
   battery_shift_y: -hpy - 1
-  reset_shift_x: 2
-  reset_shift_y: py - 5.5
+  reset_shift_x: 4
+  reset_shift_y: hpy + 2
   switch_shift_x: 1.5px + 2.65
   switch_shift_y: 3
   text_shift_x: -hpx + 1
@@ -44,10 +45,10 @@ points:
   zones:
     matrix:
       anchor:
-        shift: [010, -100] # correct anchoring for KiCAD sheet
+        shift: [050, -110] # correct anchoring for KiCAD sheet
       key:
-        padding: 1ky
-        spread: 1kx
+        padding: ky + spacing
+        spread: kx + spacing
         tags:
           cap: true
       rows:
@@ -156,9 +157,9 @@ outlines:
         # - ref: matrix_inner_num # Upper-right corner, adding space for electronics
         #   shift: [hpx + 1px, hpy]
         - ref: matrix_middle_num # Upper-right corner, adding space for electronics
-          shift: [4px - 10, hpy]
+          shift: [4px - 6, hpy]
         - ref: thumbs_extra_cluster # Bottmo of thumb cluster bump
-          shift: [py + 2, -hpy]
+          shift: [py + 7, -hpy]
         - ref: thumbs_extra_cluster # Inside cluster
           shift: [-0.75py - 1, -hpx]
         - ref: matrix_ring_mod
@@ -183,9 +184,9 @@ outlines:
         # - ref: mirror_matrix_inner_num # Upper-right corner, adding space for electronics
         #   shift: [hpx + 1px, hpy]
         - ref: mirror_matrix_middle_num # Upper-right corner, adding space for electronics
-          shift: [4px - 10, hpy]
+          shift: [4px + 3spacing - 7.5, hpy]
         - ref: mirror_thumbs_extra_cluster # Bottmo of thumb cluster bump
-          shift: [py + 2, -hpy]
+          shift: [py + 7, -hpy]
         - ref: mirror_thumbs_extra_cluster # Inside cluster
           shift: [-0.75py - 1, -hpx]
         - ref: mirror_matrix_ring_mod
@@ -335,17 +336,17 @@ pcbs:
         what: hole_m2
         where:
           ref: matrix_index_num
-          shift: [hpx, hpy - 1]
+          shift: [hpx + 2, hpy - 1]
       hole3:
         what: hole_m2
         where:
           ref: matrix_outer_num
-          shift: [hpx + 1, 0]
+          shift: [hpx + 1.5, 0]
       hole4:
         what: hole_m2
         where:
           ref: matrix_outer_bottom
-          shift: [hpx + 1, 0]
+          shift: [hpx + 1.5, 0]
       hole5:
         what: hole_m2
         where:
@@ -355,7 +356,7 @@ pcbs:
         what: hole_m2
         where:
           ref: matrix_index_mod
-          shift: [0, hpy]
+          shift: [0, -hpy - 2]
   right:
     outlines:
       main:
@@ -480,17 +481,17 @@ pcbs:
         what: hole_m2
         where:
           ref: mirror_matrix_index_num
-          shift: [hpx, hpy - 1]
+          shift: [hpx + 2, hpy - 1]
       hole3:
         what: hole_m2
         where:
           ref: mirror_matrix_outer_num
-          shift: [hpx + 1, 0]
+          shift: [hpx + 1.5, 0]
       hole4:
         what: hole_m2
         where:
           ref: mirror_matrix_outer_bottom
-          shift: [hpx + 1, 0]
+          shift: [hpx + 1.5, 0]
       hole5:
         what: hole_m2
         where:
@@ -500,4 +501,4 @@ pcbs:
         what: hole_m2
         where:
           ref: mirror_matrix_index_mod
-          shift: [0, hpy]
+          shift: [0, -hpy - 2]
