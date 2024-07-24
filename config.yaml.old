@@ -212,41 +212,34 @@ outlines:
     - operation: subtract
       name: switch_grid
 pcbs:
-  # Working on a new reversible design
-  reversible:
+  left:
     outlines:
       main:
         outline: board_left
     footprints:
       choc_hotswap:
-        what: ceoloide/switch_choc_v1_v2  
+        what: choc
         where: /^(?:matrix|thumbs)_.*/
-        nets:
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
           from: "{{col_net}}"
           to: "{{colrow}}"
-        params:
-          side: B
-          reversible: true
-          hotswap: true
-          solder: true
-          include_keycap: true
-          include_corner_marks: true
       diode:
-        what: ceoloide/diode_tht_sod123
+        what: diode
         where: /^(?:matrix|thumbs)_.*/
         params:
-          reversible: true
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
-      #TODO: Add options for rotary dial, scrollwheel, and choc switch here.
       rotary:
         # what: rotary
         what: scrollwheel # I decided I like this better.
         params:
           from: P011
-          to: OPTION
+          to: ROTARY
           A: P006
           B: GND
           C: P008
@@ -255,136 +248,257 @@ pcbs:
           ref: matrix_inner_home
           shift: [rotary_shift_x, rotary_shift_y]
           rotate: 0
-      option_diode: # Separate diode for the rotary push-button
-        what: ceoloide/diode_tht_sod123
-        params:
-          reversible: true
-          from: OPTION
-          to: P113
+      rotary_diode: # Separate diode for the rotary push-button
+        what: diode
         where:
           ref: matrix_inner_home
           shift: [rotary_diode_shift_x, rotary_diode_shift_y]
           rotate: -90
+        params:
+          from: ROTARY
+          to: P113
       # Controller
       nice_nano:
-        what: ceoloide/mcu_nice_nano
+        what: nice_nano
         params:
-          side: F
-          reversible: true
-          reverse_mount: false # Nice!Nano chips face the shield
-          include_traces: true
-          include_extra_pins: false # Whether to include P101, P102, and P107 pin holes
-          only_required_jumpers: false
-          use_rectangular_jumpers: false # use chevron jumpers by default
-          show_instructions: true
-          show_silk_labels: true
-          show_silk_labels_on_both_sides: true
-          show_via_labels: true
-          # via_size: 0.8
-          # via_drill: 0.4
+          orientation: up
         where:
           ref: matrix_inner_top
           shift: [nice_nano_shift_x, nice_nano_shift_y]
           rotate: -90
       # Screen
       nice_view: 
-        what: ceoloide/display_nice_view
+        what: nice_view
         params:
-          side: F
-          reversible: true
-          include_traces: true
-          include_silkscreen: true
-          include:courtyard: true
+          SDA: P017
+          SCL: P020
+          CS: P022
         where:
           ref: matrix_inner_top
           shift: [nice_view_shift_x, nice_view_shift_y]
           rotate: 90
       # Battery jack
       jstph:
-        what: ceoloide/battery_connector_jst_ph_2
-        params:
-          side: F
-          reversible: true
-          include_traces: true
-          include_silkscreen: true
-          include_fabrication: true
-          include_courtyard: true
+        what: jstph
         where:
           ref: matrix_inner_bottom
           shift: [battery_shift_x, battery_shift_y]
           rotate: 90
+        params:
+          side: B
+          pos: POS
+          neg: GND
       # Reset switch
       horizontal_reset:
-        what: ceoloide/reset_switch_smd_side
+        what: EVQPUC
         params:
           side: F
-          reversible: true
-          include_bosses: true
-          include_silkscreen: true
-          include_courtyard: true
+          from: GND
+          to: RST
         where:
           ref: matrix_inner_num
           shift: [reset_shift_x, reset_shift_y]
           rotate: 0
       # Switch
       battery_switch:
-        what: ceoloide/power_switch_smd_slide
-        params:
-          side: F
-          reversible: true
-          invert_behavior: false
-          include_silkscreen: true
-          include:courtyard: true
+        what: slider
         where:
           ref: matrix_inner_num
           shift: [switch_shift_x, switch_shift_y]
           rotate: -90
+        params:
+          side: F
+          from: POS
+          to: RAW
       # PCB text - CYBERFOX
-      front_text: 
-        what: ceoloide/utility_text
-        params: 
-          reversible: true
-          text: "CYBERFOX-60"
-          # justify: left
-          # h_size: 3.0
-          # v_size: 3.0
-          # thickness: 0.4
-          bold: true
-        where: 
+      front_text: &text
+        what: text
+        where: &textWhere
           ref: matrix_inner_bottom
           shift: [-hpx + 1, -hpy - 2]
+        params: &textParams
+          text: "CYBERFOX-60"
+          justify: left
+          h_size: 3.0
+          v_size: 3.0
+          thickness: 0.4
       hole0:
-        what: ceoloide/mounting_hole_npth
+        what: hole_m2
         where:
           ref: thumbs_extra_cluster
           shift: [0.75px, 0]
       hole1:
-        what: ceoloide/mounting_hole_npth
+        what: hole_m2
         where:
           ref: matrix_inner_bottom
           shift: [1.5px, 0]
       hole2:
-        what: ceoloide/mounting_hole_npth
+        what: hole_m2
         where:
           ref: matrix_index_num
           shift: [hpx + 2, hpy - 1]
       hole3:
-        what: ceoloide/mounting_hole_npth
+        what: hole_m2
         where:
           ref: matrix_outer_num
           shift: [hpx + 1.5, 0]
       hole4:
-        what: ceoloide/mounting_hole_npth
+        what: hole_m2
         where:
           ref: matrix_outer_bottom
           shift: [hpx + 1.5, 0]
       hole5:
-        what: ceoloide/mounting_hole_npth
+        what: hole_m2
         where:
           ref: matrix_middle_home
           shift: [hpx - 0.5, hpy - 1]
       hole6:
-        what: ceoloide/mounting_hole_npth
+        what: hole_m2
         where:
           ref: matrix_index_mod
+          shift: [0, -hpy - 2]
+  right:
+    outlines:
+      main:
+        outline: board_right
+    footprints:
+      choc_hotswap:
+        what: choc
+        where: /^mirror_.*/
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{col_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: /^mirror_.*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      rotary:
+        # what: rotary
+        what: scrollwheel # I decided I like this better.
+        params:
+          from: P011
+          to: ROTARY
+          A: P006
+          B: GND
+          C: P008
+          D: unused
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [rotary_shift_x, rotary_shift_y]
+          rotate: 180
+      rotary_diode: # Separate diode for the rotary push-button
+        what: diode
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [rotary_diode_shift_x, rotary_diode_shift_y]
+          rotate: -90
+        params:
+          from: ROTARY
+          to: P113
+      # Controller
+      nice_nano:
+        what: nice_nano
+        params:
+          orientation: up
+        where:
+          ref: mirror_matrix_inner_top
+          shift: [nice_nano_shift_x, nice_nano_shift_y]
+          rotate: 90
+      # Screen
+      nice_view: 
+        what: nice_view
+        params:
+          SDA: P017
+          SCL: P020
+          CS: P022
+        where:
+          ref: mirror_matrix_inner_top
+          shift: [nice_view_shift_x, nice_view_shift_y]
+          rotate: -90
+      # Battery jack
+      jstph:
+        what: jstph
+        where:
+          ref: mirror_matrix_inner_bottom
+          shift: [battery_shift_x, battery_shift_y]
+          rotate: 90
+        params:
+          side: B
+          pos: POS
+          neg: GND
+      # Reset switch
+      horizontal_reset:
+        what: EVQPUC
+        params:
+          side: F
+          from: GND
+          to: RST
+        where:
+          ref: mirror_matrix_inner_num
+          shift: [reset_shift_x, reset_shift_y]
+          rotate: 0
+      # Switch
+      battery_switch:
+        what: slider
+        where:
+          ref: mirror_matrix_inner_num
+          shift: [switch_shift_x, switch_shift_y]
+          rotate: -90
+        params:
+          side: F
+          from: POS
+          to: RAW
+      # PCB text - CYBERFOX
+      front_text: &text
+        what: text
+        where: &textWhere
+          ref: mirror_matrix_inner_bottom
+          shift: [text_shift_x, text_shift_y]
+        params: &textParams
+          text: "CYBERFOX-60"
+          justify: right
+          h_size: 3.0
+          v_size: 3.0
+          thickness: 0.4
+      hole0:
+        what: hole_m2
+        where:
+          ref: mirror_thumbs_extra_cluster
+          shift: [0.75px, 0]
+      hole1:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_inner_bottom
+          shift: [1.5px, 0]
+      hole2:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_index_num
+          shift: [hpx + 2, hpy - 1]
+      hole3:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_outer_num
+          shift: [hpx + 1.5, 0]
+      hole4:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_outer_bottom
+          shift: [hpx + 1.5, 0]
+      hole5:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_middle_home
+          shift: [hpx - 0.5, hpy - 1]
+      hole6:
+        what: hole_m2
+        where:
+          ref: mirror_matrix_index_mod
           shift: [0, -hpy - 2]
