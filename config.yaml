@@ -32,12 +32,12 @@ units:
   nice_nano_shift_x: px
   nice_nano_shift_y: py - 6
   nice_view_shift_x: px
-  nice_view_shift_y: -py - 6.5
-  battery_shift_x: 1.5px - 3
+  nice_view_shift_y: py - 6.5
+  battery_shift_x: 2px
   battery_shift_y: -hpy - 1
   reset_shift_x: 4
-  reset_shift_y: hpy + 2
-  switch_shift_x: 1.5px + 2.65
+  reset_shift_y: hpy + 4
+  switch_shift_x: 1.5px + 4
   switch_shift_y: 3
   text_shift_x: -hpx + 1
   text_shift_y: -hpy - 2
