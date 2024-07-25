@@ -30,9 +30,9 @@ units:
   rotary_diode_shift_x: hpx + 2.5
   rotary_diode_shift_y: -4.5
   nice_nano_shift_x: px
-  nice_nano_shift_y: py - 6 # was 4.5
+  nice_nano_shift_y: py - 6
   nice_view_shift_x: px
-  nice_view_shift_y: -6.5 # was 5
+  nice_view_shift_y: -py - 6.5
   battery_shift_x: 1.5px - 3
   battery_shift_y: -hpy - 1
   reset_shift_x: 4
@@ -165,17 +165,21 @@ outlines:
           shift: [-hpx, -hpy]
         - ref: matrix_outer_bottom
           shift: [-0.75px, -hpy]
-  battery_notch:
+  battery_notch: #Cutout for larger battery wires to pass through
     - what: rectangle
-      size: [1, 1]
+      size: [5, 5]
       where: 
         ref: matrix_inner_top
-        shift: [1.5px, 0]
+        shift: [1.5px + 5, -7]
     - what: circle
-      radius: 1
+      radius: 2.5
       where:
         ref: matrix_inner_top
-        shift: [1.5px - 1, 0]
+        shift: [1.5px + 2.5, -7]
+  pcb:
+    - name: board
+    - operation: subtract
+      name: battery_notch
   board_keycaps: # Mostly just for visualization
     - name: board
     - operation: subtract
@@ -212,7 +216,7 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [0, -9]
+          shift: [-2, -8.5]
       #TODO: Add options for rotary dial, scrollwheel, and choc switch here.
       rotary:
         # what: rotary
@@ -283,9 +287,9 @@ pcbs:
           include_fabrication: true
           include_courtyard: true
         where:
-          ref: matrix_inner_bottom
+          ref: matrix_inner_top
           shift: [battery_shift_x, battery_shift_y]
-          rotate: 90
+          rotate: 0
       # Reset switch
       horizontal_reset:
         what: ceoloide/reset_switch_smd_side
