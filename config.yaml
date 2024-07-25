@@ -212,11 +212,11 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [0, -5]
+          shift: [0, -9]
       #TODO: Add options for rotary dial, scrollwheel, and choc switch here.
       rotary:
         # what: rotary
-        what: scrollwheel # I decided I like this better.
+        what: EVQWGD001 # I decided I like this better.
         params:
           from: P011
           to: OPTION
@@ -258,7 +258,7 @@ pcbs:
         where:
           ref: matrix_inner_top
           shift: [nice_nano_shift_x, nice_nano_shift_y]
-          rotate: -90
+          rotate: 0
       # Screen
       nice_view: 
         what: ceoloide/display_nice_view
@@ -267,11 +267,11 @@ pcbs:
           reversible: true
           include_traces: true
           include_silkscreen: true
-          include:courtyard: true
+          include_courtyard: true
         where:
           ref: matrix_inner_top
           shift: [nice_view_shift_x, nice_view_shift_y]
-          rotate: 90
+          rotate: 0
       # Battery jack
       jstph:
         what: ceoloide/battery_connector_jst_ph_2
@@ -301,13 +301,13 @@ pcbs:
           rotate: 0
       # Switch
       battery_switch:
-        what: ceoloide/power_switch_smd_slide
+        what: ceoloide/power_switch_smd_side
         params:
           side: F
           reversible: true
           invert_behavior: false
           include_silkscreen: true
-          include:courtyard: true
+          include_courtyard: true
         where:
           ref: matrix_inner_num
           shift: [switch_shift_x, switch_shift_y]
