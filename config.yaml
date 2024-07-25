@@ -123,9 +123,6 @@ points:
         cluster:
           row_net: P113
   rotate: 0
-  mirror: &mirror
-    ref: thumbs_extra_cluster
-    distance: 2.5kx
 outlines:
   switch_grid:
     - what: rectangle
@@ -141,7 +138,7 @@ outlines:
       size: [1.5kx-0.5, ky-0.5]
   keys:
     [keys1u, keys15u]
-  board_left:
+  board:
     - what: polygon
       operation: stack
       fillet: 2
@@ -168,62 +165,36 @@ outlines:
           shift: [-hpx, -hpy]
         - ref: matrix_outer_bottom
           shift: [-0.75px, -hpy]
-  board_right:
-    - what: polygon
-      operation: stack
-      fillet: 2
-      points:
-        - ref: mirror_matrix_outer_num # Upper-left corner
-          shift: [-0.75px, hpy]
-        - ref: mirror_matrix_middle_num
-          shift: [-hpx, hpy]
-        # - ref: mirror_matrix_middle_num
-        #   shift: [hpx, hpy]
-        # - ref: mirror_matrix_inner_num
-        #   shift: [hpx, hpy]
-        # - ref: mirror_matrix_inner_num # Upper-right corner, adding space for electronics
-        #   shift: [hpx + 1px, hpy]
-        - ref: mirror_matrix_middle_num # Upper-right corner, adding space for electronics
-          shift: [4px + 3spacing - 7.5, hpy]
-        - ref: mirror_thumbs_extra_cluster # Bottmo of thumb cluster bump
-          shift: [py + 7, -hpy]
-        - ref: mirror_thumbs_extra_cluster # Inside cluster
-          shift: [-0.75py - 1, -hpx]
-        - ref: mirror_matrix_ring_mod
-          shift: [px - 2, -hpy]
-        - ref: mirror_matrix_ring_mod
-          shift: [-hpx, -hpy]
-        - ref: mirror_matrix_outer_bottom
-          shift: [-0.75px, -hpy]
-  board_left_keycaps: # Mostly just for visualization
-    - name: board_left
+  battery_notch:
+    - what: rectangle
+      size: [1, 1]
+      where: 
+        ref: matrix_inner_top
+        shift: [1.5px, 0]
+    - what: circle
+      radius: 1
+      where:
+        ref: matrix_inner_top
+        shift: [1.5px - 1, 0]
+  board_keycaps: # Mostly just for visualization
+    - name: board
     - operation: subtract
       name: keys
-  board_right_keycaps: # Mostly just for visualization
-    - name: board_right
-    - operation: subtract
-      name: keys
-  board_left_switch_cutouts: # Used to show where switches will go. Useful for 3D Printing.
-    - name: board_left
-    - operation: subtract
-      name: switch_grid
-  board_right_switch_cutouts: # Used to show where switches will go.  Useful for 3D Printing.
-    - name: board_right
+  board_switch_cutouts: # Used to show where switches will go. Useful for 3D Printing.
+    - name: board
     - operation: subtract
       name: switch_grid
 pcbs:
   # Working on a new reversible design
   reversible:
+    template: kicad8
     outlines:
       main:
-        outline: board_left
+        outline: board
     footprints:
       choc_hotswap:
         what: ceoloide/switch_choc_v1_v2  
         where: /^(?:matrix|thumbs)_.*/
-        nets:
-          from: "{{col_net}}"
-          to: "{{colrow}}"
         params:
           side: B
           reversible: true
@@ -231,6 +202,8 @@ pcbs:
           solder: true
           include_keycap: true
           include_corner_marks: true
+          from: "{{col_net}}"
+          to: "{{colrow}}"
       diode:
         what: ceoloide/diode_tht_sod123
         where: /^(?:matrix|thumbs)_.*/
