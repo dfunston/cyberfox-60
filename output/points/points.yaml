@@ -1,0 +1,3280 @@
+matrix_outer_bottom:
+    x: 40
+    'y': -91.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 27
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: outer_bottom
+        name: matrix_outer_bottom
+        tags:
+            cap: false
+            bigcap: true
+        col_net: P011
+        row_net: P115
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                width: 1.5kx
+                stagger: 0
+                col_net: P011
+                tags:
+                    cap: false
+                    bigcap: true
+            name: outer
+        row: bottom
+        bind:
+            - 10
+            - 10
+            - 0
+            - 0
+matrix_outer_home:
+    x: 40
+    'y': -73
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 27
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: outer_home
+        name: matrix_outer_home
+        tags:
+            cap: false
+            bigcap: true
+        col_net: P011
+        row_net: P002
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                width: 1.5kx
+                stagger: 0
+                col_net: P011
+                tags:
+                    cap: false
+                    bigcap: true
+            name: outer
+        row: home
+        bind:
+            - 10
+            - 10
+            - 10
+            - 0
+matrix_outer_top:
+    x: 40
+    'y': -54.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 27
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: outer_top
+        name: matrix_outer_top
+        tags:
+            cap: false
+            bigcap: true
+        col_net: P011
+        row_net: P029
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                width: 1.5kx
+                stagger: 0
+                col_net: P011
+                tags:
+                    cap: false
+                    bigcap: true
+            name: outer
+        row: top
+        bind:
+            - 10
+            - 10
+            - 10
+            - 0
+matrix_outer_num:
+    x: 40
+    'y': -36
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 27
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: outer_num
+        name: matrix_outer_num
+        tags:
+            cap: false
+            bigcap: true
+        col_net: P011
+        row_net: P031
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                width: 1.5kx
+                stagger: 0
+                col_net: P011
+                tags:
+                    cap: false
+                    bigcap: true
+            name: outer
+        row: num
+        bind:
+            - 0
+            - 10
+            - 10
+            - 0
+matrix_pinky_bottom:
+    x: 63.5
+    'y': -91.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 23.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: pinky_bottom
+        name: matrix_pinky_bottom
+        tags:
+            cap: true
+        col_net: P104
+        row_net: P115
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                stagger: 0
+                col_net: P104
+                spread: 1.175px
+            name: pinky
+        row: bottom
+        bind:
+            - 10
+            - 10
+            - 0
+            - 10
+matrix_pinky_home:
+    x: 63.5
+    'y': -73
+    r: 0
+    meta:
+        stagger: 0
+        spread: 23.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: pinky_home
+        name: matrix_pinky_home
+        tags:
+            cap: true
+        col_net: P104
+        row_net: P002
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                stagger: 0
+                col_net: P104
+                spread: 1.175px
+            name: pinky
+        row: home
+        bind:
+            - 10
+            - 10
+            - 10
+            - 10
+matrix_pinky_top:
+    x: 63.5
+    'y': -54.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 23.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: pinky_top
+        name: matrix_pinky_top
+        tags:
+            cap: true
+        col_net: P104
+        row_net: P029
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                stagger: 0
+                col_net: P104
+                spread: 1.175px
+            name: pinky
+        row: top
+        bind:
+            - 10
+            - 10
+            - 10
+            - 10
+matrix_pinky_num:
+    x: 63.5
+    'y': -36
+    r: 0
+    meta:
+        stagger: 0
+        spread: 23.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: pinky_num
+        name: matrix_pinky_num
+        tags:
+            cap: true
+        col_net: P104
+        row_net: P031
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                stagger: 0
+                col_net: P104
+                spread: 1.175px
+            name: pinky
+        row: num
+        bind:
+            - 0
+            - 10
+            - 10
+            - 10
+matrix_ring_mod:
+    x: 83
+    'y': -105
+    r: 0
+    meta:
+        stagger: 5
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: ring_mod
+        name: matrix_ring_mod
+        tags:
+            cap: true
+        col_net: P104
+        row_net: P113
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P104
+            key:
+                stagger: 5
+                col_net: P106
+            name: ring
+        row: mod
+        bind:
+            - 10
+            - 0
+            - 0
+            - 0
+matrix_ring_bottom:
+    x: 83
+    'y': -86.5
+    r: 0
+    meta:
+        stagger: 5
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: ring_bottom
+        name: matrix_ring_bottom
+        tags:
+            cap: true
+        col_net: P106
+        row_net: P115
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P104
+            key:
+                stagger: 5
+                col_net: P106
+            name: ring
+        row: bottom
+        bind:
+            - 10
+            - 10
+            - 10
+            - 10
+matrix_ring_home:
+    x: 83
+    'y': -68
+    r: 0
+    meta:
+        stagger: 5
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: ring_home
+        name: matrix_ring_home
+        tags:
+            cap: true
+        col_net: P106
+        row_net: P002
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P104
+            key:
+                stagger: 5
+                col_net: P106
+            name: ring
+        row: home
+        bind:
+            - 10
+            - 10
+            - 10
+            - 10
+matrix_ring_top:
+    x: 83
+    'y': -49.5
+    r: 0
+    meta:
+        stagger: 5
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: ring_top
+        name: matrix_ring_top
+        tags:
+            cap: true
+        col_net: P106
+        row_net: P029
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P104
+            key:
+                stagger: 5
+                col_net: P106
+            name: ring
+        row: top
+        bind:
+            - 10
+            - 10
+            - 10
+            - 10
+matrix_ring_num:
+    x: 83
+    'y': -31
+    r: 0
+    meta:
+        stagger: 5
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: ring_num
+        name: matrix_ring_num
+        tags:
+            cap: true
+        col_net: P106
+        row_net: P031
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P104
+            key:
+                stagger: 5
+                col_net: P106
+            name: ring
+        row: num
+        bind:
+            - 0
+            - 10
+            - 10
+            - 0
+matrix_middle_mod:
+    x: 102.5
+    'y': -102
+    r: 0
+    meta:
+        stagger: 3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: middle_mod
+        name: matrix_middle_mod
+        tags:
+            cap: true
+        col_net: P106
+        row_net: P113
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P106
+            key:
+                stagger: 3
+                col_net: P111
+            name: middle
+        row: mod
+        bind:
+            - 10
+            - 10
+            - 0
+            - 10
+matrix_middle_bottom:
+    x: 102.5
+    'y': -83.5
+    r: 0
+    meta:
+        stagger: 3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: middle_bottom
+        name: matrix_middle_bottom
+        tags:
+            cap: true
+        col_net: P111
+        row_net: P115
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P106
+            key:
+                stagger: 3
+                col_net: P111
+            name: middle
+        row: bottom
+        bind:
+            - 10
+            - 10
+            - 10
+            - 10
+matrix_middle_home:
+    x: 102.5
+    'y': -65
+    r: 0
+    meta:
+        stagger: 3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: middle_home
+        name: matrix_middle_home
+        tags:
+            cap: true
+        col_net: P111
+        row_net: P002
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P106
+            key:
+                stagger: 3
+                col_net: P111
+            name: middle
+        row: home
+        bind:
+            - 10
+            - 10
+            - 10
+            - 10
+matrix_middle_top:
+    x: 102.5
+    'y': -46.5
+    r: 0
+    meta:
+        stagger: 3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: middle_top
+        name: matrix_middle_top
+        tags:
+            cap: true
+        col_net: P111
+        row_net: P029
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P106
+            key:
+                stagger: 3
+                col_net: P111
+            name: middle
+        row: top
+        bind:
+            - 10
+            - 10
+            - 10
+            - 10
+matrix_middle_num:
+    x: 102.5
+    'y': -28
+    r: 0
+    meta:
+        stagger: 3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: middle_num
+        name: matrix_middle_num
+        tags:
+            cap: true
+        col_net: P111
+        row_net: P031
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P106
+            key:
+                stagger: 3
+                col_net: P111
+            name: middle
+        row: num
+        bind:
+            - 0
+            - 0
+            - 10
+            - 0
+matrix_index_mod:
+    x: 122
+    'y': -105
+    r: 0
+    meta:
+        stagger: -3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: index_mod
+        name: matrix_index_mod
+        tags:
+            cap: true
+        col_net: P111
+        row_net: P113
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P111
+            key:
+                stagger: -3
+                col_net: P010
+            name: index
+        row: mod
+        bind:
+            - 10
+            - 0
+            - 0
+            - 0
+matrix_index_bottom:
+    x: 122
+    'y': -86.5
+    r: 0
+    meta:
+        stagger: -3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: index_bottom
+        name: matrix_index_bottom
+        tags:
+            cap: true
+        col_net: P010
+        row_net: P115
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P111
+            key:
+                stagger: -3
+                col_net: P010
+            name: index
+        row: bottom
+        bind:
+            - 10
+            - 10
+            - 10
+            - 10
+matrix_index_home:
+    x: 122
+    'y': -68
+    r: 0
+    meta:
+        stagger: -3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: index_home
+        name: matrix_index_home
+        tags:
+            cap: true
+        col_net: P010
+        row_net: P002
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P111
+            key:
+                stagger: -3
+                col_net: P010
+            name: index
+        row: home
+        bind:
+            - 10
+            - 10
+            - 10
+            - 10
+matrix_index_top:
+    x: 122
+    'y': -49.5
+    r: 0
+    meta:
+        stagger: -3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: index_top
+        name: matrix_index_top
+        tags:
+            cap: true
+        col_net: P010
+        row_net: P029
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P111
+            key:
+                stagger: -3
+                col_net: P010
+            name: index
+        row: top
+        bind:
+            - 10
+            - 10
+            - 10
+            - 10
+matrix_index_num:
+    x: 122
+    'y': -31
+    r: 0
+    meta:
+        stagger: -3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: index_num
+        name: matrix_index_num
+        tags:
+            cap: true
+        col_net: P010
+        row_net: P031
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    col_net: P111
+            key:
+                stagger: -3
+                col_net: P010
+            name: index
+        row: num
+        bind:
+            - 0
+            - 0
+            - 10
+            - 10
+matrix_inner_bottom:
+    x: 141.5
+    'y': -89.5
+    r: 0
+    meta:
+        stagger: -3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: inner_bottom
+        name: matrix_inner_bottom
+        tags:
+            cap: true
+        col_net: P009
+        row_net: P115
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                stagger: -3
+                col_net: P009
+            name: inner
+        row: bottom
+        bind:
+            - 10
+            - 0
+            - 0
+            - 10
+matrix_inner_home:
+    x: 141.5
+    'y': -71
+    r: 0
+    meta:
+        stagger: -3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: inner_home
+        name: matrix_inner_home
+        tags:
+            cap: true
+        col_net: P009
+        row_net: P002
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                stagger: -3
+                col_net: P009
+            name: inner
+        row: home
+        bind:
+            - 10
+            - 0
+            - 10
+            - 10
+matrix_inner_top:
+    x: 141.5
+    'y': -52.5
+    r: 0
+    meta:
+        stagger: -3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: inner_top
+        name: matrix_inner_top
+        tags:
+            cap: true
+        col_net: P009
+        row_net: P029
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                stagger: -3
+                col_net: P009
+            name: inner
+        row: top
+        bind:
+            - 10
+            - 0
+            - 10
+            - 10
+matrix_inner_num:
+    x: 141.5
+    'y': -34
+    r: 0
+    meta:
+        stagger: -3
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 17
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: inner_num
+        name: matrix_inner_num
+        tags:
+            cap: true
+        col_net: P009
+        row_net: P031
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                    name: outer
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                    name: pinky
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                    name: middle
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+                    name: inner
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                stagger: -3
+                col_net: P009
+            name: inner
+        row: num
+        bind:
+            - 0
+            - 0
+            - 10
+            - 10
+thumbs_space_cluster:
+    x: 150.7546144
+    'y': -117.5139886
+    r: 65
+    meta:
+        stagger: 0
+        spread: 19.5
+        splay: -25
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 2.5
+            - -7.125
+        rotate: 90
+        adjust: {}
+        width: 18
+        height: 27
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: space_cluster
+        name: thumbs_space_cluster
+        tags:
+            bigcap: true
+        col_net: P010
+        row_net: P113
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                rotate: 90
+                tags:
+                    bigcap: true
+            columns:
+                space:
+                    key:
+                        height: 1.5kx
+                        splay: -25
+                        col_net: P010
+                        shift:
+                            - 0.25hpx
+                            - '-0.75hpy'
+                    rows: {}
+                    name: space
+                extra:
+                    key:
+                        height: 1.5kx
+                        col_net: P009
+                        shift:
+                            - 0.25hpx
+                            - '-0.75hpy'
+                    rows: {}
+                    name: extra
+            rows:
+                cluster:
+                    row_net: P113
+            name: thumbs
+        col:
+            key:
+                height: 1.5kx
+                splay: -25
+                col_net: P010
+                shift:
+                    - 0.25hpx
+                    - '-0.75hpy'
+            rows: {}
+            name: space
+        row: cluster
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+thumbs_extra_cluster:
+    x: 168.42761620000002
+    'y': -125.7550447
+    r: 65
+    meta:
+        stagger: 0
+        spread: 19.5
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 2.5
+            - -7.125
+        rotate: 90
+        adjust: {}
+        width: 18
+        height: 27
+        padding: 18.5
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: extra_cluster
+        name: thumbs_extra_cluster
+        tags:
+            bigcap: true
+        col_net: P009
+        row_net: P113
+        zone:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                rotate: 90
+                tags:
+                    bigcap: true
+            columns:
+                space:
+                    key:
+                        height: 1.5kx
+                        splay: -25
+                        col_net: P010
+                        shift:
+                            - 0.25hpx
+                            - '-0.75hpy'
+                    rows: {}
+                    name: space
+                extra:
+                    key:
+                        height: 1.5kx
+                        col_net: P009
+                        shift:
+                            - 0.25hpx
+                            - '-0.75hpy'
+                    rows: {}
+                    name: extra
+            rows:
+                cluster:
+                    row_net: P113
+            name: thumbs
+        col:
+            key:
+                height: 1.5kx
+                col_net: P009
+                shift:
+                    - 0.25hpx
+                    - '-0.75hpy'
+            rows: {}
+            name: extra
+        row: cluster
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0

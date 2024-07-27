@@ -1,0 +1,456 @@
+meta:
+    engine: 4.1.0
+    version: 0.5.0
+    author: Daniel Fox
+units:
+    $default_width: cx
+    $default_height: cy
+    kx: cx
+    ky: cy
+    spacing: 0.75
+    px: kx + 2
+    py: ky + 2
+    hx: (kx / 2)
+    hy: (ky / 2)
+    hpx: (px / 2)
+    hpy: (py / 2)
+    rotary_shift_x: px + 5
+    rotary_shift_y: -2
+    rotary_diode_shift_x: px + 5
+    rotary_diode_shift_y: 5.5
+    nice_nano_shift_x: px + 3
+    nice_nano_shift_y: py - 2
+    nice_view_shift_x: px + 3
+    nice_view_shift_y: py - 6
+    battery_shift_x: 1.5px + 7
+    battery_shift_y: 7
+    reset_shift_x: 4
+    reset_shift_y: hpy + 4
+    switch_shift_x: 1.5px + 11
+    switch_shift_y: py
+    text_shift_x: '-hpx + 1'
+    text_shift_y: '-hpy - 2'
+points:
+    zones:
+        matrix:
+            anchor:
+                shift:
+                    - 40
+                    - -110
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                tags:
+                    cap: true
+            rows:
+                mod:
+                    row_net: P113
+                bottom:
+                    row_net: P115
+                home:
+                    row_net: P002
+                top:
+                    row_net: P029
+                num:
+                    row_net: P031
+            columns:
+                outer:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        width: 1.5kx
+                        stagger: 0
+                        col_net: P011
+                        tags:
+                            cap: false
+                            bigcap: true
+                pinky:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: 0
+                        col_net: P104
+                        spread: 1.175px
+                ring:
+                    rows:
+                        mod:
+                            col_net: P104
+                    key:
+                        stagger: 5
+                        col_net: P106
+                middle:
+                    rows:
+                        mod:
+                            col_net: P106
+                    key:
+                        stagger: 3
+                        col_net: P111
+                index:
+                    rows:
+                        mod:
+                            col_net: P111
+                    key:
+                        stagger: -3
+                        col_net: P010
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        stagger: -3
+                        col_net: P009
+        thumbs:
+            key:
+                padding: ky + 2spacing
+                spread: kx + 2spacing
+                rotate: 90
+                tags:
+                    bigcap: true
+            anchor:
+                ref: matrix_inner_mod
+                shift:
+                    - 10
+                    - -2
+            columns:
+                space:
+                    key:
+                        height: 1.5kx
+                        splay: -25
+                        col_net: P010
+                        shift:
+                            - 0.25hpx
+                            - '-0.75hpy'
+                extra:
+                    key:
+                        height: 1.5kx
+                        col_net: P009
+                        shift:
+                            - 0.25hpx
+                            - '-0.75hpy'
+            rows:
+                cluster:
+                    row_net: P113
+    rotate: 0
+outlines:
+    switch_grid:
+        -
+            what: rectangle
+            where: true
+            size:
+                - kx-0.5
+                - ky-0.5
+    keys1u:
+        -
+            what: rectangle
+            where: cap
+            size:
+                - kx-0.5
+                - ky-0.5
+    keys15u:
+        -
+            what: rectangle
+            where: bigcap
+            size:
+                - 1.5kx-0.5
+                - ky-0.5
+    keys:
+        - keys1u
+        - keys15u
+    board:
+        -
+            what: polygon
+            operation: stack
+            fillet: 2
+            points:
+                -
+                    ref: matrix_outer_num
+                    shift:
+                        - '-0.75px'
+                        - hpy
+                -
+                    ref: matrix_middle_num
+                    shift:
+                        - '-hpx'
+                        - hpy
+                -
+                    ref: matrix_inner_num
+                    shift:
+                        - 2px + 3
+                        - py - 3.5
+                -
+                    ref: thumbs_extra_cluster
+                    shift:
+                        - py - 7
+                        - '-hpx - 2'
+                -
+                    ref: thumbs_extra_cluster
+                    shift:
+                        - '-0.75py - 3'
+                        - '-hpx - 2'
+                -
+                    ref: matrix_index_mod
+                    shift:
+                        - '-px + 2'
+                        - '-hpy'
+                -
+                    ref: matrix_ring_mod
+                    shift:
+                        - '-hpx'
+                        - '-hpy'
+                -
+                    ref: matrix_outer_bottom
+                    shift:
+                        - '-0.75px'
+                        - '-hpy'
+    battery_notch:
+        -
+            what: rectangle
+            size:
+                - 5
+                - 5
+            where:
+                ref: matrix_inner_top
+                shift:
+                    - 1.5px + 10.5
+                    - -7
+        -
+            what: circle
+            radius: 2.5
+            where:
+                ref: matrix_inner_top
+                shift:
+                    - 1.5px + 8
+                    - -7
+    big_battery_outline:
+        -
+            what: rectangle
+            size:
+                - 36
+                - 55
+            where:
+                ref: matrix_inner_bottom
+                shift:
+                    - px
+                    - -1
+    pcb:
+        -
+            name: board
+        -
+            operation: subtract
+            name: battery_notch
+    board_keycaps:
+        -
+            name: pcb
+        -
+            operation: subtract
+            name: keys
+    board_switch_cutouts:
+        -
+            name: pcb
+        -
+            operation: subtract
+            name: switch_grid
+    board_battery_position:
+        -
+            name: board_switch_cutouts
+        -
+            operation: subtract
+            name: big_battery_outline
+pcbs:
+    reversible:
+        template: kicad8
+        outlines:
+            main:
+                outline: pcb
+        footprints:
+            choc_hotswap:
+                what: ceoloide/switch_choc_v1_v2
+                where: '/^(?:matrix|thumbs)_.*/'
+                params:
+                    side: B
+                    reversible: true
+                    hotswap: true
+                    solder: true
+                    include_keycap: true
+                    include_corner_marks: true
+                    from: '{{col_net}}'
+                    to: '{{colrow}}'
+            diode:
+                what: ceoloide/diode_tht_sod123
+                where: '/^(?:matrix|thumbs)_.*/'
+                params:
+                    reversible: true
+                    from: '{{colrow}}'
+                    to: '{{row_net}}'
+                adjust:
+                    rotate: 90
+                    shift:
+                        - 8.5
+                        - -6
+            rotary:
+                what: EVQWGD001
+                params:
+                    from: P011
+                    to: OPTION
+                    reverse: true
+                    A: P006
+                    B: GND
+                    C: P008
+                    D: unused
+                where:
+                    ref: matrix_inner_home
+                    shift:
+                        - rotary_shift_x
+                        - rotary_shift_y
+                    rotate: 0
+            option_diode:
+                what: ceoloide/diode_tht_sod123
+                params:
+                    reversible: true
+                    from: OPTION
+                    to: P113
+                where:
+                    ref: matrix_inner_home
+                    shift:
+                        - rotary_diode_shift_x
+                        - rotary_diode_shift_y
+                    rotate: 180
+            nice_nano:
+                what: ceoloide/mcu_nice_nano
+                params:
+                    side: F
+                    reversible: true
+                    reverse_mount: false
+                    include_traces: true
+                    include_extra_pins: false
+                    only_required_jumpers: false
+                    use_rectangular_jumpers: false
+                    show_instructions: true
+                    show_silk_labels: true
+                    show_silk_labels_on_both_sides: true
+                    show_via_labels: true
+                where:
+                    ref: matrix_inner_top
+                    shift:
+                        - nice_nano_shift_x
+                        - nice_nano_shift_y
+                    rotate: 0
+            nice_view:
+                what: ceoloide/display_nice_view
+                params:
+                    side: F
+                    reversible: true
+                    include_traces: true
+                    include_silkscreen: true
+                    include_courtyard: true
+                where:
+                    ref: matrix_inner_top
+                    shift:
+                        - nice_view_shift_x
+                        - nice_view_shift_y
+                    rotate: 0
+            jstph:
+                what: ceoloide/battery_connector_jst_ph_2
+                params:
+                    side: F
+                    reversible: true
+                    include_traces: true
+                    include_silkscreen: true
+                    include_fabrication: true
+                    include_courtyard: true
+                where:
+                    ref: matrix_inner_top
+                    shift:
+                        - battery_shift_x
+                        - battery_shift_y
+                    rotate: 0
+            horizontal_reset:
+                what: ceoloide/reset_switch_smd_side
+                params:
+                    side: F
+                    reversible: true
+                    include_bosses: true
+                    include_silkscreen: true
+                    include_courtyard: true
+                where:
+                    ref: matrix_inner_num
+                    shift:
+                        - reset_shift_x
+                        - reset_shift_y
+                    rotate: 0
+            battery_switch:
+                what: ceoloide/power_switch_smd_side
+                params:
+                    side: F
+                    reversible: true
+                    invert_behavior: false
+                    include_silkscreen: true
+                    include_courtyard: true
+                where:
+                    ref: matrix_inner_top
+                    shift:
+                        - switch_shift_x
+                        - switch_shift_y
+                    rotate: 0
+            front_text:
+                what: ceoloide/utility_text
+                params:
+                    reversible: true
+                    text: CYBERFOX-60
+                    bold: true
+                where:
+                    ref: matrix_inner_bottom
+                    shift:
+                        - '-hpx + 1'
+                        - '-hpy - 2'
+            hole0:
+                what: ceoloide/mounting_hole_npth
+                where:
+                    ref: thumbs_extra_cluster
+                    shift:
+                        - 0.75px
+                        - 0
+            hole1:
+                what: ceoloide/mounting_hole_npth
+                where:
+                    ref: matrix_inner_bottom
+                    shift:
+                        - 1.5px
+                        - 0
+            hole2:
+                what: ceoloide/mounting_hole_npth
+                where:
+                    ref: matrix_index_num
+                    shift:
+                        - hpx + 2
+                        - hpy - 1
+            hole3:
+                what: ceoloide/mounting_hole_npth
+                where:
+                    ref: matrix_outer_num
+                    shift:
+                        - hpx + 1.5
+                        - 0
+            hole4:
+                what: ceoloide/mounting_hole_npth
+                where:
+                    ref: matrix_outer_bottom
+                    shift:
+                        - hpx + 1.5
+                        - 0
+            hole5:
+                what: ceoloide/mounting_hole_npth
+                where:
+                    ref: matrix_middle_home
+                    shift:
+                        - hpx - 0.5
+                        - hpy - 1
+            hole6:
+                what: ceoloide/mounting_hole_npth
+                where:
+                    ref: matrix_index_mod
+                    shift:
+                        - 0
+                        - '-hpy - 2'
