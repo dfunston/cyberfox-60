@@ -44,15 +44,15 @@ points:
                     cap: true
             rows:
                 mod:
-                    row_net: P113
+                    row_net: P7
                 bottom:
-                    row_net: P115
+                    row_net: P8
                 home:
-                    row_net: P002
+                    row_net: P9
                 top:
-                    row_net: P029
+                    row_net: P10
                 num:
-                    row_net: P031
+                    row_net: P16
             columns:
                 outer:
                     rows:
@@ -61,7 +61,7 @@ points:
                     key:
                         width: 1.5kx
                         stagger: 0
-                        col_net: P011
+                        col_net: P14
                         tags:
                             cap: false
                             bigcap: true
@@ -71,36 +71,36 @@ points:
                             skip: true
                     key:
                         stagger: 0
-                        col_net: P104
+                        col_net: P15
                         spread: 1.175px
                 ring:
                     rows:
                         mod:
-                            col_net: P104
+                            col_net: P14
                     key:
                         stagger: 5
-                        col_net: P106
+                        col_net: P18
                 middle:
                     rows:
                         mod:
-                            col_net: P106
+                            col_net: P15
                     key:
                         stagger: 3
-                        col_net: P111
+                        col_net: P19
                 index:
                     rows:
                         mod:
-                            col_net: P111
+                            col_net: P18
                     key:
                         stagger: -3
-                        col_net: P010
+                        col_net: P20
                 inner:
                     rows:
                         mod:
                             skip: true
                     key:
                         stagger: -3
-                        col_net: P009
+                        col_net: P21
         thumbs:
             key:
                 padding: ky + 2spacing
@@ -118,20 +118,20 @@ points:
                     key:
                         height: 1.5kx
                         splay: -25
-                        col_net: P010
+                        col_net: P19
                         shift:
                             - 0.25hpx
                             - '-0.75hpy'
                 extra:
                     key:
                         height: 1.5kx
-                        col_net: P009
+                        col_net: P20
                         shift:
                             - 0.25hpx
                             - '-0.75hpy'
             rows:
                 cluster:
-                    row_net: P113
+                    row_net: P7
     rotate: 0
 outlines:
     switch_grid:
@@ -292,12 +292,12 @@ pcbs:
             rotary:
                 what: EVQWGD001
                 params:
-                    from: P011
+                    from: P7
                     to: OPTION
                     reverse: true
-                    A: P006
+                    A: P1
                     B: GND
-                    C: P008
+                    C: P0
                     D: unused
                 where:
                     ref: matrix_inner_home
@@ -310,7 +310,7 @@ pcbs:
                 params:
                     reversible: true
                     from: OPTION
-                    to: P113
+                    to: P21
                 where:
                     ref: matrix_inner_home
                     shift:
@@ -345,6 +345,11 @@ pcbs:
                     include_traces: true
                     include_silkscreen: true
                     include_courtyard: true
+                    CS: P2
+                    GND: GND
+                    VCC: VCC
+                    SCK: P3
+                    MOSI: P4
                 where:
                     ref: matrix_inner_top
                     shift:
@@ -394,17 +399,114 @@ pcbs:
                         - switch_shift_x
                         - switch_shift_y
                     rotate: 0
-            front_text:
+            cyberfox_text:
                 what: ceoloide/utility_text
                 params:
-                    reversible: true
                     text: CYBERFOX-60
+                    align: left
+                    side: F
                     bold: true
+                    height: 2
+                    width: 2
+                    face: Hack Nerd Font
                 where:
                     ref: matrix_inner_bottom
                     shift:
-                        - '-hpx + 1'
-                        - '-hpy - 2'
+                        - '-hpx'
+                        - '-hpy - 1'
+            creator_text:
+                what: ceoloide/utility_text
+                params:
+                    text: Designed by Daniel Fox.
+                    align: left
+                    side: F
+                    bold: false
+                    height: 1
+                    width: 1
+                    face: Hack Nerd Font
+                where:
+                    ref: matrix_inner_bottom
+                    shift:
+                        - '-hpx + 0.25'
+                        - '-hpy - 3'
+            license_text:
+                what: ceoloide/utility_text
+                params:
+                    text: Licensed under the GNU GPLv3.
+                    align: left
+                    side: F
+                    bold: false
+                    height: 1
+                    width: 1
+                    face: Hack Nerd Font
+                where:
+                    ref: matrix_inner_bottom
+                    shift:
+                        - '-hpx + 0.25'
+                        - '-hpy - 4.5'
+            cyberfox_text_r:
+                what: ceoloide/utility_text
+                params:
+                    text: CYBERFOX-60
+                    align: right
+                    side: B
+                    mirrored: true
+                    bold: true
+                    height: 2
+                    width: 2
+                    face: Hack Nerd Font
+                where:
+                    ref: matrix_inner_bottom
+                    shift:
+                        - '-hpx + 0.25'
+                        - '-hpy - 1'
+            creator_text_r:
+                what: ceoloide/utility_text
+                params:
+                    text: Designed by Daniel Fox.
+                    align: right
+                    side: B
+                    mirrored: true
+                    bold: false
+                    height: 1
+                    width: 1
+                    face: Hack Nerd Font
+                where:
+                    ref: matrix_inner_bottom
+                    shift:
+                        - '-hpx + 0.5'
+                        - '-hpy - 3'
+            license_text_r:
+                what: ceoloide/utility_text
+                params:
+                    text: Licensed under the GNU GPLv3.
+                    align: right
+                    side: B
+                    mirrored: true
+                    bold: false
+                    height: 1
+                    width: 1
+                    face: Hack Nerd Font
+                where:
+                    ref: matrix_inner_bottom
+                    shift:
+                        - '-hpx + 0.5'
+                        - '-hpy - 4.5'
+            waywayway_text:
+                what: ceoloide/utility_text
+                params:
+                    reversible: true
+                    text: WayWayWay
+                    bold: false
+                    height: 1
+                    width: 1
+                    face: Hack Nerd Font
+                where:
+                    ref: thumbs_space_cluster
+                    rotate: -90
+                    shift:
+                        - '-hpx - 3'
+                        - 0
             hole0:
                 what: ceoloide/mounting_hole_npth
                 where:
