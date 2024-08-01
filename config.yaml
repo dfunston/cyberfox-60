@@ -28,7 +28,7 @@ units:
   rotary_shift_x: px + 5
   rotary_shift_y: -2
   rotary_diode_shift_x: px + 5
-  rotary_diode_shift_y: 5.5
+  rotary_diode_shift_y: 6.5
   nice_nano_shift_x: px + 3
   nice_nano_shift_y: py - 2
   nice_view_shift_x: px + 3
@@ -219,11 +219,12 @@ pcbs:
         where: /^(?:matrix|thumbs)_.*/
         params:
           reversible: true
+          include_tht: true
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
           rotate: 90
-          shift: [8.5, -6]
+          shift: [8.5, -4]
       #TODO: Add options for rotary dial, scrollwheel, and choc switch here.
       rotary:
         # what: rotary
@@ -244,6 +245,7 @@ pcbs:
         what: ceoloide/diode_tht_sod123
         params:
           reversible: true
+          include_tht: true
           from: OPTION
           to: P21
         where:

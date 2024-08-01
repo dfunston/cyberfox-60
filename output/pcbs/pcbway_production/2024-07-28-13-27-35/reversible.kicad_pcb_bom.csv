@@ -1,0 +1,10 @@
+﻿Designator,Quantity,Value,Footprint,Package,MPN,DNP,Mount_Type
+,1,EVQWGD001,RollerEncoder_Panasonic_EVQWGD001,,,,tht
+"D1, D10, D11, D12, D13, D14, D15, D16, D17, D18, D19, D2, D20, D21, D22, D23, D24, D25, D26, D27, D28, D29, D3, D30, D4, D5, D6, D7, D8, D9",30,,diode_tht_sod123,,,,tht
+DISP1,1,,display_nice_view,,,,tht
+JST1,1,,battery_connector_jst_ph_2,,,,tht
+MCU1,1,,mcu_nice_nano,,,,tht
+"MH1, MH2, MH3, MH4, MH5, MH6, MH7",7,,mounting_hole_npth,,,,tht
+PWR1,1,,power_switch_smd_side,,,,smt
+RST1,1,,reset_switch_smd_side,,,,smt
+"S1, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S2, S20, S21, S22, S23, S24, S25, S26, S27, S28, S29, S3, S4, S5, S6, S7, S8, S9",29,,switch_choc_v1_v2,,,,tht
